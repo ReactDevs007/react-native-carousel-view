@@ -100,7 +100,14 @@ export default class Carousel extends Component {
     this.children = Children.toArray(children).filter((child) => child);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  // componentWillReceiveProps(nextProps: Props) {
+  //   this._filterChildren();
+
+  //   // when received props it will update all views, with new props.
+  //   this.clearTimeout(this.timer);
+  //   this._resetPager();
+  // }
+  componentDidUpdate() {
     this._filterChildren();
 
     // when received props it will update all views, with new props.
